@@ -1,0 +1,280 @@
+@import 'styles/__settings.scss';
+
+.wrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: $border;
+    height: auto;
+    max-width: 100%;
+
+    .description {
+      @extend %flex_row;
+      flex: 3;
+
+      &__image {
+        min-width: 160px;
+        height: 160px;
+        margin: 0 50px 0 30px;
+      }
+
+      &__text {
+        @extend %flex_column;
+
+      & > div {
+        margin-bottom: 10px;
+      }
+
+        &_code {
+          font-size: 12px;
+          color: $darkgrey;
+        }
+
+        &_name a {
+          color: $black;
+          font-weight: $weight;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        &_extra {
+
+          &--need {
+            font-size: 13px;
+            line-height: 16px;
+            color: #545454;
+            font-weight: $weight;
+          }
+
+          & a {
+            font-size: 13px;
+            line-height: 17px;
+            color: $darkgrey;
+          }
+        }
+      }
+    }
+
+    .cost {
+      @extend %flex_column;
+      align-items: flex-end;
+      flex: 1;
+
+      &__product-status {
+        margin-bottom: 20px;
+        cursor: pointer;
+        color: #093;
+        border-bottom: 1px dotted #093;
+        font-size: $font_standart;
+      }
+
+      &__product-card {
+        position: relative;
+
+        &_club-card {
+          position: absolute;
+          left: -80px;
+          top: -8px;
+          align-self: flex-start;
+          font-weight: 400;
+          font-size: $font_standart;
+          width: 58px;
+          height: 34px;
+          text-align: right;
+          line-height: 17px;
+        }
+
+        &_gold-price {
+          font-size: 25px;
+          font-weight: $weight;
+          color: $black;
+        }
+      }
+
+      &__retail-price {
+        color: #a7a7a7;
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+
+      &__np-binding {
+        font-size: 12px;
+        line-height: 17px;
+        color: #999;
+        margin-bottom: 5px;
+      }
+
+      &__unit-wrapper {
+        display: flex;
+        margin: 10px;
+
+        &_box {
+          margin-right: 10px;
+          font-size: 13px;
+          line-height: 13px;
+          color: #707070;
+          border-bottom: 1px dotted #707070;
+          cursor: pointer;
+        }
+
+        .isActive {
+          color: $white;
+          background-color: $black;
+          cursor: default;
+        }
+      }
+
+      &__list-unit {
+        position: relative;
+        display: flex;
+        width: 222px;
+        height: 44px;
+        border: $border;
+        padding: 5px 10px;
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -7px;
+          border-top: 8px solid;
+        }
+
+        &:before {
+          margin-bottom: -1px;
+          border-color: $grey;
+          color: $grey;
+          left: 13px;
+          border-left: $before;
+          border-right: $before;
+        }
+
+        &:after {
+          border-color: #fff;
+          left: 14px;
+          border-left: $after;
+          border-right: $after;
+        }
+
+        &_unit-icon {
+          background: url("images/unit--i.png") 50% no-repeat;
+          background-size: cover;
+          width: 15px;
+          height: 15px;
+          margin: 8px 10px 0 0;
+        }
+
+        &_unit-cost {
+          font-size: 13px;
+          line-height: 13px;
+          width: 148px;
+        }
+      }
+
+      &__product-wrapper {
+        display: flex;
+
+        &_count {
+          position: relative;
+          margin-top: 10px;
+          line-height: 37px;
+          width: 67px;
+          height: 40px;
+          border: $border;
+
+          &--counter {
+            width: 40px;
+            height: 37px;
+            border: none;
+            outline: none;
+            text-align: center;
+          }
+
+          &--arrows {
+            position: absolute;
+            top:0px;
+            left: 41px;
+            width: 25px;
+            height: 40px;
+            border-left: $border;
+
+            .arrow {
+              cursor: pointer;
+              width: 25px;
+              height: 20px;
+              background: url("images/count--i.png") no-repeat;
+            }
+
+            .arrow-up {
+              background-position: -28px 0;
+              border-bottom: $border;
+
+              &:hover {
+                background-position: -1px 0;
+                background-color: $darkgrey;
+              }
+            }
+
+            .arrow-down {
+              background-position: -28px -20px;
+
+              &:hover {
+                background-position: -1px -20px;
+                background-color: $darkgrey;
+              }
+            }
+          }
+        }
+
+        &_cart-name {
+          justify-content: space-around;
+          margin-top: 10px;
+          margin-left: 5px;
+          width: 148px;
+          height: 42px;
+          background-color: $btn;
+          cursor: pointer;
+          color: $white;
+          line-height: 40px;
+          font-size: 14px;
+
+          &:hover {
+            background-color: #333;
+          }
+
+          .cart-svg {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      .description {
+        flex: 4;
+
+        &__text_name a {
+          font-size: 13px;
+        }
+      }
+    }
+
+
+    /* Landscape phones and portrait tablets */
+    @media (max-width: 767px) {
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+
+          .description {
+            font-size: 100px;
+            // border: 1px solid black;
+            // flex-direction: column;
+          }
+        }
+    }
+
+    /* Landscape phones and smaller */
+    @media (max-width: 480px) {
+
+    }
+}

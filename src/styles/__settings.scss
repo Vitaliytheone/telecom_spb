@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+$font_standart: 14px;
+$darkgrey: #666;
+$btn: #f90;
+$grey: #ccc;
+$white: #fff;
+$lightgrey: #707070;
+$border: 1px solid #ccc;
+$black: #000;
+$weight: 700;
+
+$before: 8px solid transparent;
+$after: 7px solid transparent;
+
+%flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+
+// HTML WHOLE COMMON
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
