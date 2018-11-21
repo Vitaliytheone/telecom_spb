@@ -5,7 +5,7 @@ import Product from './components/Product';
 
 const products = initialProducts.map(product => ({
   ...product,
-  assocProducts: product.assocProducts.split(';\n')
+  assocProducts: product.assocProducts.split(';')
 }));
 
 class App extends Component {

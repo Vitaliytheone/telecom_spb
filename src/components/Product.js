@@ -47,7 +47,7 @@ class Product extends Component {
               Могут понадобиться:
             </span>
             <span>
-              {product.assocProducts.map(assoc => (<a href="#">{assoc},</a>))}
+              {product.assocProducts.map(assoc => (<a href="#">{assoc};</a>))}
             </span>
           </div>
         </div>

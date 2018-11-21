@@ -6,16 +6,41 @@
     justify-content: space-between;
     border: $border;
     height: auto;
-    max-width: 100%;
+    min-width: 100%;
+    @media screen and (min-width: 320px) and (max-width: 480px) {
+      flex-direction: column;
+    }
+
 
     .description {
       @extend %flex_row;
       flex: 3;
+      @media screen and (min-width: 670px) and (max-width: 1199px) {
+        flex: 4;
+      }
+      @media screen and (max-width: 670px) {
+        flex:1;
+      }
+      @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
 
       &__image {
         min-width: 160px;
         height: 160px;
         margin: 0 50px 0 30px;
+        @media screen and (min-width: 480px) and  (max-width: 767px) {
+          width: 160px;
+          height: 160px;
+          order: 2;
+          align-self: center;
+        }
+        @media screen and (min-width: 320px) and (max-width: 480px) {
+          order: 2;
+        }
       }
 
       &__text {
@@ -30,18 +55,33 @@
           color: $darkgrey;
         }
 
+        &_name {
+            @media screen and (max-width: 1199px)  {
+              height: 150px;
+              overflow: hidden;
+            }
+        }
+
         &_name a {
           color: $black;
           font-weight: $weight;
           font-size: 16px;
           line-height: 24px;
+          @media screen and (max-width: 1199px) {
+            font-size: 14px;
+          }
         }
 
         &_extra {
 
+          @media screen and (max-width: 670px) {
+            display: none;
+          }
+
           &--need {
+            display: inline-block;
             font-size: 13px;
-            line-height: 16px;
+            line-height: 13px;
             color: #545454;
             font-weight: $weight;
           }
@@ -59,6 +99,9 @@
       @extend %flex_column;
       align-items: flex-end;
       flex: 1;
+      @media (max-width: 480px) {
+        align-items: center;
+      }
 
       &__product-status {
         margin-bottom: 20px;
@@ -82,6 +125,9 @@
           height: 34px;
           text-align: right;
           line-height: 17px;
+          @media screen and (min-width: 320px) and (max-width: 480px) {
+            display: none;
+          }
         }
 
         &_gold-price {
@@ -131,6 +177,9 @@
         height: 44px;
         border: $border;
         padding: 5px 10px;
+        @media screen and (max-width: 670px) {
+          display: none;
+        }
 
         &:before,
         &:after {
@@ -248,18 +297,7 @@
         }
       }
     }
-    @media screen and (min-width: 992px) and (max-width: 1199px) {
-      .description {
-        flex: 4;
 
-        &__text_name a {
-          font-size: 13px;
-        }
-      }
-    }
-
-
-    /* Landscape phones and portrait tablets */
     @media (max-width: 767px) {
         .wrapper {
           display: flex;
