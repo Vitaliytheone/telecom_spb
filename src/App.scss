@@ -18,10 +18,7 @@
       @media screen and (min-width: 670px) and (max-width: 1199px) {
         flex: 4;
       }
-      @media screen and (max-width: 670px) {
-        flex:1;
-      }
-      @media (max-width: 480px) {
+      @media (max-width: 600px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -31,14 +28,18 @@
       &__image {
         min-width: 160px;
         height: 160px;
-        margin: 0 50px 0 30px;
-        @media screen and (min-width: 480px) and  (max-width: 767px) {
+        margin-left: 10px;
+        margin-right: 10px;
+        @media screen and (min-width: 670px) {
+          margin: 0 50px 0 30px;
+        }
+        @media screen and (min-width: 480px) and (max-width: 767px) {
           width: 160px;
           height: 160px;
           order: 2;
           align-self: center;
         }
-        @media screen and (min-width: 320px) and (max-width: 480px) {
+        @media screen and (min-width: 320px) and (max-width: 600px) {
           order: 2;
         }
       }
@@ -99,8 +100,9 @@
       @extend %flex_column;
       align-items: flex-end;
       flex: 1;
-      @media (max-width: 480px) {
+      @media screen and (min-width: 320px) and (max-width: 600px) {
         align-items: center;
+        justify-content: center;
       }
 
       &__product-status {
@@ -125,7 +127,7 @@
           height: 34px;
           text-align: right;
           line-height: 17px;
-          @media screen and (min-width: 320px) and (max-width: 480px) {
+          @media screen and (min-width: 320px) and (max-width: 600px) {
             display: none;
           }
         }
@@ -137,10 +139,22 @@
         }
       }
 
+      // &__retail-price,
+      // &__np-binding,
+      // &__unit-wrapper {
+      //   @media screen and (min-width: 480px) and (max-width: 600px) {
+      //     margin-bottom: 15px;
+      //   }
+      // }
+      //
       &__retail-price {
         color: #a7a7a7;
         font-size: 25px;
         margin-bottom: 5px;
+        @media screen and (min-width: 480px) and (max-width: 600px) {
+          margin-bottom: 20px;
+        }
+
       }
 
       &__np-binding {
@@ -148,6 +162,9 @@
         line-height: 17px;
         color: #999;
         margin-bottom: 5px;
+        @media screen and (min-width: 480px) and (max-width: 600px) {
+          margin-bottom: 20px;
+        }
       }
 
       &__unit-wrapper {
@@ -296,23 +313,5 @@
           }
         }
       }
-    }
-
-    @media (max-width: 767px) {
-        .wrapper {
-          display: flex;
-          flex-direction: column;
-
-          .description {
-            font-size: 100px;
-            // border: 1px solid black;
-            // flex-direction: column;
-          }
-        }
-    }
-
-    /* Landscape phones and smaller */
-    @media (max-width: 480px) {
-
     }
 }
